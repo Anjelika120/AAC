@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>try{var _t=localStorage.getItem('aac-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<title>Aus Asia Connect — A different way into the Australia–Asia corridor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  .display {
+    font-family: var(--display);
+    font-weight: var(--display-weight);
+    letter-spacing: -0.012em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ivory);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* optional film grain */
+  body[data-grain="on"]::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9000;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAnIGhlaWdodD0nMTYwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45JyBudW1PY3RhdmVzPScyJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsdGVyPSd1cmwoI24pJy8+PC9zdmc+");
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection { background: var(--pop); color: var(--pop-ink); }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow .tick {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+    flex: none;
+  }
+
+  :root {
+    /* Warm-white corridor palette — from the AAC v5 brand guide */
+    --bg: #f7f3ea;              /* Warm White — primary surface */
+    --bg-2: #fbf8f1;            /* soft warm panel — gentle contrast with bg */
+    --ivory: #111416;           /* Near Black — primary text (var name kept for legacy) */
+    --muted: #5d646e;           /* secondary text */
+    --faint: #99a0a8;           /* faint labels / placeholders */
+    --line: rgba(17, 20, 22, 0.14);
+    --line-soft: rgba(17, 20, 22, 0.07);
+    --accent: #0e4651;          /* Deep petrol — structural signal, legible on warm white */
+    --accent-bright: #02bdbd;   /* Bright Teal — corridor motif / fine marks */
+    --accent-ink: #f7f3ea;      /* warm-white text on teal */
+    --pop: #e8923a;             /* Amber — the spark */
+    --pop-ink: #211608;         /* text on amber */
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --display-sans: "Inter", system-ui, sans-serif;
+    --display: var(--serif);    /* Cormorant headlines (swapped by Tweaks) */
+    --display-weight: 500;
+    --maxw: 1240px;
+    --gutter: clamp(20px, 5vw, 64px);
+  }
+
+  /* ---------- dark tone (deep petrol ink — not black, not cheap teal) ---------- */
+  html[data-theme="dark"] {
+    --bg: #0c2a2f;             /* deep petrol ink */
+    --bg-2: #103940;
+    --ivory: #f1ede2;
+    --muted: #9bb0ad;
+    --faint: #5f7a78;
+    --line: rgba(241, 237, 226, 0.14);
+    --line-soft: rgba(241, 237, 226, 0.07);
+    --accent: #2fd9cf;          /* bright teal pops on petrol */
+    --accent-bright: #5cf0e3;
+    --accent-ink: #f7f3ea;
+  }
+  html[data-theme="dark"] .cta { border-top: 1px solid color-mix(in srgb, var(--accent) 38%, transparent); }
+
+  .accent { color: var(--accent); }
+  .pop { color: var(--pop); }
+  /* warm serif-italic accent words inside institutional sans headlines */
+  .ital { font-style: italic; font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    --pad-y: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: var(--pad-y) 26px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), background .35s, color .35s, border-color .35s;
+    will-change: transform;
+    white-space: nowrap;
+    flex: none;
+  }
+  .btn-primary {
+    background: var(--pop);
+    color: var(--pop-ink);
+  }
+  .btn-primary .arrow { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-primary:hover .arrow { transform: translateX(5px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ivory);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--pop); color: var(--pop); }
+  .arrow { font-size: 17px; line-height: 1; }
+
+  /* ---------- nav ---------- */
+  header.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background .4s ease, border-color .4s ease, backdrop-filter .4s;
+    border-bottom: 1px solid transparent;
+  }
+  header.nav.scrolled {
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom-color: var(--line-soft);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 78px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+  }
+  .brand .logo { height: 46px; width: auto; display: block; }
+  .brand .logo-white { display: none; }
+  html[data-theme="dark"] .brand .logo-colour { display: none; }
+  html[data-theme="dark"] .brand .logo-white { display: block; }
+
+  /* nav right cluster + theme toggle */
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    width: 40px; height: 40px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; padding: 0;
+    color: var(--ivory);
+    transition: border-color .3s, color .3s;
+    flex: none;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .theme-toggle .ic { width: 18px; height: 18px; }
+  .theme-toggle .ic-sun { display: none; }
+  html[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
+  html[data-theme="dark"] .theme-toggle .ic-sun { display: block; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    flex: none;
+  }
+  .nav-links a { white-space: nowrap; }
+  .nav-links a.link {
+    font-size: 14.5px;
+    color: var(--muted);
+    font-weight: 500;
+    position: relative;
+    transition: color .3s;
+  }
+  .nav-links a.link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-links a.link:hover { color: var(--ivory); }
+  .nav-links a.link:hover::after { width: 100%; }
+  .nav-cta {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ivory);
+    position: relative;
+    padding-bottom: 2px;
+    transition: color .3s;
+  }
+  .nav-cta::after {
+    content: "";
+    position: absolute; left: 0; bottom: -2px;
+    width: 100%; height: 1.5px; background: var(--pop);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-cta:hover { color: var(--pop); }
+  .nav-cta:hover::after { transform: scaleX(1); }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px;
+  }
+  .burger span { width: 24px; height: 1.5px; background: var(--ivory); transition: .3s; }
+
+  /* mobile menu overlay */
+  .mobile-menu {
+    position: fixed; inset: 0; z-index: 95;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    padding: 110px var(--gutter) 48px;
+    transform: translateY(-100%);
+    transition: transform .5s cubic-bezier(.6,.05,.1,1);
+    visibility: hidden;
+  }
+  .mobile-menu.open { transform: translateY(0); visibility: visible; }
+  .mobile-menu a {
+    font-family: var(--display);
+    font-size: clamp(34px, 9vw, 52px);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ivory);
+  }
+  .mobile-menu a .num { font-family: var(--sans); font-size: 13px; color: var(--accent); margin-right: 14px; vertical-align: super; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-top: 96px;
+    overflow: hidden;
+  }
+  .corridor {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+  }
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+  .hero-kicker .sep { width: 38px; height: 1px; background: var(--line); }
+  .hero-kicker .label { font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+  h1.hero-title {
+    margin: 0;
+    font-size: clamp(38px, 5.8vw, 76px);
+    line-height: 1.07;
+    max-width: 15ch;
+  }
+  .hero-sub {
+    margin: 36px 0 0;
+    max-width: 56ch;
+    font-size: clamp(17px, 1.45vw, 20.5px);
+    line-height: 1.62;
+    color: color-mix(in srgb, var(--ivory) 84%, var(--muted));
+  }
+  .hero-actions {
+    margin-top: 46px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .hero-foot {
+    margin-top: 0;
+    font-size: 14px;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-foot .tick { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 34px;
+    left: var(--gutter);
+    z-index: 2;
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .scroll-hint .line {
+    width: 1px; height: 34px;
+    background: linear-gradient(var(--accent), transparent);
+    position: relative; overflow: hidden;
+  }
+  .scroll-hint .line::after {
+    content: ""; position: absolute; top: -34px; left: 0; width: 1px; height: 34px;
+    background: linear-gradient(transparent, var(--accent));
+    animation: drip 2.6s ease-in-out infinite;
+  }
+  @keyframes drip { 0% { transform: translateY(0); } 100% { transform: translateY(68px); } }
+
+  /* ---------- section scaffolding ---------- */
+  section { position: relative; }
+  .section-pad { padding: clamp(90px, 13vh, 170px) 0; }
+  .section-mark {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 12.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; margin-bottom: 46px;
+  }
+  .section-mark .idx { color: var(--accent); }
+  .section-mark .rule { flex: 1; height: 1px; background: var(--line-soft); }
+
+  .divider { height: 1px; background: var(--line-soft); }
+
+  /* ---------- POV ---------- */
+  /* ---------- POV — matches page surface ---------- */
+  .pov {
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+  .pov::after {
+    content: "";
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(58% 90% at 100% 0%, color-mix(in srgb, var(--accent-bright) 9%, transparent), transparent 62%);
+  }
+  .pov .wrap { position: relative; z-index: 1; }
+  .pov-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 6vw, 90px);
+    align-items: start;
+  }
+  .pov-title {
+    font-size: clamp(36px, 5.4vw, 82px);
+    margin: 0;
+    color: var(--ivory);
+  }
+  .pov-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    max-width: 52ch;
+    margin: 0;
+    padding-top: 10px;
+    font-size: clamp(18px, 1.55vw, 23px);
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .pov-body .lead-serif { font-family: var(--serif); font-style: italic; }
+  .transfers {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 44px;
+    margin-top: 20px;
+  }
+  .transfers .chip {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 30px);
+    color: var(--ivory);
+    white-space: nowrap;
+    position: relative;
+  }
+  .transfers .chip:not(:first-child)::before {
+    content: ""; position: absolute; left: -23px; top: 50%;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--pop);
+    transform: translateY(-50%);
+  }
+
+  /* ---------- what we do ---------- */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .service {
+    padding: 46px 36px 52px;
+    border-bottom: 1px solid var(--line-soft);
+    border-right: 1px solid var(--line-soft);
+    position: relative;
+    transition: background .4s ease;
+  }
+  .service:first-child { padding-left: 0; }
+  .service:last-child { border-right: none; }
+  .service::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .service:hover::before { width: 100%; }
+  .service:first-child:hover::before { left: 0; }
+  .service .s-num {
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    letter-spacing: 0.1em; margin-bottom: 28px; display: block;
+  }
+  .service h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(23px, 2vw, 29px);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .service p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.62;
+    max-width: 34ch;
+  }
+
+  /* ---------- before you land (no foothold) ---------- */
+  .noground {
+    background:
+      radial-gradient(110% 120% at 100% 0%, color-mix(in srgb, var(--pop) 6%, transparent), transparent 55%),
+      var(--bg-2);
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .ng-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: clamp(36px, 6vw, 92px);
+    align-items: start;
+  }
+  .ng-title {
+    font-size: clamp(32px, 4.6vw, 60px);
+    max-width: 12ch;
+    margin: 8px 0 0;
+  }
+  .ng-title .pop { font-style: italic; }
+  .ng-lead {
+    margin: 0 0 26px;
+    font-size: clamp(19px, 1.7vw, 26px);
+    line-height: 1.5;
+    font-family: var(--display);
+    color: color-mix(in srgb, var(--ivory) 94%, var(--muted));
+    text-wrap: pretty;
+  }
+  .ng-body {
+    margin: 0 0 36px;
+    font-size: clamp(16px, 1.25vw, 18.5px);
+    line-height: 1.66;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+  .ng-stages { display: flex; flex-wrap: wrap; gap: 14px 34px; }
+  .ng-stage {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 14.5px; font-weight: 600; letter-spacing: 0.01em;
+    color: var(--ivory);
+  }
+  .ng-stage .ng-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--pop);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--pop) 18%, transparent);
+    flex: none;
+  }
+
+  /* ---------- what we do / flywheel ---------- */
+  .what-head {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: clamp(36px, 6vw, 92px);
+    align-items: end;
+    margin-bottom: 64px;
+  }
+  .what-head h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(32px, 4.6vw, 60px);
+    line-height: 1.06; letter-spacing: -0.012em;
+    margin: 0; max-width: 14ch;
+  }
+  .what-head h2 .pop { font-style: italic; }
+  .what-lead {
+    margin: 0;
+    font-size: clamp(17px, 1.35vw, 20px);
+    line-height: 1.62;
+    color: color-mix(in srgb, var(--ivory) 84%, var(--muted));
+    max-width: 50ch;
+  }
+  .what-lead strong { color: var(--ivory); font-weight: 600; }
+
+  .flywheel {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .fw-stage {
+    padding: 42px 38px 46px;
+    border-bottom: 1px solid var(--line-soft);
+    position: relative;
+  }
+  .fw-stage:first-child { padding-left: 0; }
+  .fw-stage::before {
+    content: "";
+    position: absolute; top: -1px; left: 0;
+    width: 0; height: 2px; background: var(--pop);
+    transition: width .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .fw-stage.in::before { width: 100%; }
+  .fw-stage[data-d="2"].in::before { transition-delay: .15s; }
+  .fw-stage[data-d="3"].in::before { transition-delay: .3s; }
+  .fw-num {
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    letter-spacing: 0.12em; display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 26px;
+  }
+  .fw-num .stage-tag { color: var(--muted); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; font-size: 11px; }
+  .fw-stage h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px); line-height: 1.14;
+    margin: 0 0 16px; letter-spacing: -0.01em;
+  }
+  .fw-stage p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.62; max-width: 32ch; }
+  .fw-arrow {
+    display: flex; align-items: center; justify-content: center;
+    width: 64px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--pop);
+    position: relative;
+  }
+  .fw-arrow svg { width: 34px; height: 34px; overflow: visible; }
+  .fw-loop {
+    display: flex; align-items: flex-start; gap: 22px;
+    margin-top: 38px; padding-top: 34px;
+    border-top: 1px dashed var(--line);
+  }
+  .fw-loop .loop-mark {
+    flex: none; width: 46px; height: 46px;
+    color: var(--pop);
+  }
+  .fw-loop p {
+    margin: 0; max-width: 70ch;
+    font-size: clamp(16px, 1.3vw, 19px); line-height: 1.6;
+    color: color-mix(in srgb, var(--ivory) 82%, var(--muted));
+  }
+  .fw-loop p strong { color: var(--pop); font-weight: 600; font-style: italic; font-family: var(--display); }
+
+  /* ---------- who it's for ---------- */
+  .audience {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .aud-card {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line-soft);
+    border-right: 1px solid var(--line-soft);
+    padding: 46px 40px 50px;
+    position: relative;
+    transition: background .4s ease;
+  }
+  .aud-card:first-child { padding-left: 0; }
+  .aud-card:last-child { border-right: none; }
+  .aud-card::before {
+    content: "";
+    position: absolute; top: -1px; left: 0;
+    width: 0; height: 2px; background: var(--accent);
+    transition: width .55s cubic-bezier(.2,.7,.2,1);
+  }
+  .aud-card.in::before { width: 100%; }
+  .aud-card[data-d="2"].in::before { transition-delay: .12s; }
+  .aud-card[data-d="3"].in::before { transition-delay: .24s; }
+  .aud-card .a-glyph {
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 30px; display: flex; align-items: center; gap: 12px;
+  }
+  .aud-card .a-glyph .bar { width: 26px; height: 1px; background: var(--accent); }
+  .aud-card h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(25px, 2.4vw, 34px);
+    line-height: 1.12;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  .aud-card p { margin: 0; color: var(--muted); font-size: 16.5px; line-height: 1.65; max-width: 40ch; }
+
+  /* ---------- why us ---------- */
+  .why {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(40px, 7vw, 96px);
+    align-items: start;
+  }
+  .why-figure {
+    position: relative;
+  }
+  .why-figure .big {
+    font-family: var(--display);
+    font-size: clamp(82px, 12vw, 168px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ivory);
+  }
+  .why-figure .big sup { font-size: 0.18em; color: var(--accent); vertical-align: super; margin-left: 0.12em; letter-spacing: 0.04em; font-family: var(--sans); font-weight: 600; text-transform: uppercase; }
+  .why-figure .cap {
+    margin-top: 30px;
+    font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+    max-width: 22ch; line-height: 1.7;
+  }
+  .why-copy h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 34px;
+    max-width: 18ch;
+    letter-spacing: -0.012em;
+  }
+  .why-copy p {
+    margin: 0 0 24px;
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.66;
+    color: color-mix(in srgb, var(--ivory) 84%, var(--muted));
+    max-width: 52ch;
+  }
+  .why-copy p:last-child { color: var(--muted); }
+
+  /* ---------- final cta ---------- */
+  .cta {
+    background: var(--cta-bg, var(--accent));
+    color: var(--accent-ink);
+    border-top: 1px solid var(--line-soft);
+  }
+  .cta-inner { text-align: left; }
+  .cta h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 6vw, 80px);
+    line-height: 1.05;
+    margin: 0;
+    max-width: 15ch;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .cta h2 { color: var(--accent-ink); }
+  .cta p {
+    margin: 38px 0 0;
+    max-width: 50ch;
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.62;
+    color: color-mix(in srgb, var(--accent-ink) 82%, transparent);
+  }
+  .cta-row {
+    margin-top: 52px;
+    display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+  }
+  .cta-email {
+    font-size: 16px;
+    color: color-mix(in srgb, var(--accent-ink) 72%, transparent);
+    display: inline-flex; flex-direction: column; gap: 4px;
+  }
+  .cta-email .lbl { font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--accent-ink) 52%, transparent); }
+  .cta-email a { color: var(--accent-ink); border-bottom: 1px solid rgba(247,243,234,0.32); padding-bottom: 2px; transition: border-color .3s, color .3s; }
+  .cta-email a:hover { color: var(--pop); border-color: var(--pop); }
+
+  /* ---------- footer ---------- */
+  footer.site {
+    padding: 56px 0 48px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .foot-grid {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+  }
+  .foot-links { display: flex; gap: 30px; flex-wrap: wrap; }
+  .foot-links a { font-size: 14px; color: var(--muted); transition: color .3s; }
+  .foot-links a:hover { color: var(--accent); }
+  .foot-meta { font-size: 13px; color: var(--faint); }
+
+  /* ---------- reveal animation ----------
+     NOTE: only TRANSFORM is animated, never opacity — so content is always
+     readable even if the animation clock is paused (e.g. in a hidden/captured
+     document). A frozen first-frame just shows the element nudged 28px down. */
+  @keyframes revealUp { from { transform: translateY(28px); } to { transform: translateY(0); } }
+  html.anim .reveal.in { animation: revealUp .9s cubic-bezier(.2,.7,.2,1) both; }
+  html.anim .reveal[data-d="1"].in { animation-delay: .08s; }
+  html.anim .reveal[data-d="2"].in { animation-delay: .16s; }
+  html.anim .reveal[data-d="3"].in { animation-delay: .24s; }
+  @media (prefers-reduced-motion: reduce) {
+    html.anim .reveal.in { animation: none; }
+    .scroll-hint .line::after, .signal { animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- about / team ---------- */
+  #team { background: var(--bg-2); }
+  .team-intro {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    margin: 0 0 18px;
+    max-width: 20ch;
+  }
+  .team-sub {
+    margin: 0 0 64px;
+    max-width: 56ch;
+    font-size: clamp(16px, 1.3vw, 18.5px);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .team-lead {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: clamp(36px, 5vw, 80px);
+    align-items: start;
+    padding-bottom: 64px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  image-slot {
+    --frame: var(--bg);
+    border: 1px solid var(--line-soft);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 7%, var(--bg)), var(--bg));
+    color: var(--faint);
+    font-family: var(--sans);
+    box-shadow: 0 24px 56px -34px rgba(17,20,22,0.45);
+  }
+  .team-portrait { width: 100%; height: 420px; }
+  .team-role {
+    font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    display: flex; align-items: center; gap: 12px; margin-bottom: 22px;
+  }
+  .team-role .bar { width: 26px; height: 1px; background: var(--accent); }
+  .team-name {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 42px);
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+  }
+  .team-name .ph { color: var(--faint); }
+  .team-bio {
+    margin: 0 0 18px;
+    font-size: clamp(16.5px, 1.25vw, 19px);
+    line-height: 1.66;
+    color: color-mix(in srgb, var(--ivory) 82%, var(--muted));
+    max-width: 52ch;
+  }
+  .team-bio:last-child { color: var(--muted); }
+  .team-titleline {
+    font-size: 14.5px; line-height: 1.5; color: var(--accent);
+    font-weight: 600; margin: 0 0 22px; max-width: 46ch;
+  }
+  .cred-list {
+    list-style: none; margin: 22px 0 0; padding: 0;
+    display: grid; gap: 11px;
+  }
+  .cred-list li {
+    position: relative; padding-left: 22px;
+    font-size: 14.5px; line-height: 1.5; color: var(--muted);
+    max-width: 50ch;
+  }
+  .cred-list li::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .cred-list li b { color: var(--ivory); font-weight: 600; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 2.4vw, 34px);
+  }
+  .tm-photo { width: 100%; height: 280px; margin-bottom: 24px; }
+  /* clickable member card */
+  button.team-member {
+    appearance: none; background: none; border: none; padding: 0; margin: 0;
+    font: inherit; color: inherit; text-align: left; cursor: pointer;
+    display: block; width: 100%;
+  }
+  button.team-member .tm-photo {
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s;
+  }
+  button.team-member:hover .tm-photo { transform: translateY(-4px); box-shadow: 0 30px 60px -32px rgba(17,20,22,0.45); }
+  button.team-member:hover .tm-name { color: var(--accent); }
+  button.team-member:has(.tm-more.soon) { cursor: default; }
+  button.team-member:has(.tm-more.soon):hover .tm-photo { transform: none; box-shadow: none; }
+  button.team-member:has(.tm-more.soon):hover .tm-name { color: var(--ivory); }
+  .tm-more {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 12px;
+    font-family: var(--sans);
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+  }
+  .tm-more .pl { font-size: 15px; line-height: 1; transition: transform .3s; }
+  button.team-member:hover .tm-more .pl { transform: rotate(90deg); }
+  .tm-more.soon { color: var(--faint); }
+  .tm-name {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .tm-name .ph { color: var(--faint); }
+  .tm-role { font-size: 14px; color: var(--accent); font-weight: 500; margin: 0 0 12px; }
+  .tm-line { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; max-width: 30ch; }
+
+  /* ---------- member bio overlay ---------- */
+  .bio-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    padding: clamp(20px, 5vw, 64px);
+    background: color-mix(in srgb, var(--bg) 60%, transparent);
+    backdrop-filter: blur(7px) saturate(115%);
+    -webkit-backdrop-filter: blur(7px) saturate(115%);
+    opacity: 0; visibility: hidden;
+    transition: opacity .4s ease, visibility .4s;
+  }
+  .bio-overlay.open { opacity: 1; visibility: visible; }
+  .bio-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    box-shadow: 0 40px 100px -40px rgba(8,30,34,0.6);
+    max-width: 880px; width: 100%;
+    max-height: 86vh; overflow: auto;
+    display: grid; grid-template-columns: 300px 1fr;
+    transform: translateY(20px) scale(0.985);
+    transition: transform .45s cubic-bezier(.2,.7,.2,1);
+  }
+  .bio-overlay.open .bio-card { transform: none; }
+  .bio-card .bio-portrait { width: 100%; height: 100%; min-height: 340px; }
+  .bio-card .bio-body { padding: clamp(34px, 4vw, 52px); position: relative; }
+  .bio-card .bio-role {
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+    display: flex; align-items: center; gap: 11px; margin-bottom: 18px;
+  }
+  .bio-card .bio-role .bar { width: 26px; height: 1.5px; background: var(--accent); }
+  .bio-card h3 {
+    font-family: var(--display); font-weight: var(--display-weight);
+    font-size: clamp(30px, 3.4vw, 44px); line-height: 1.04; margin: 0 0 10px;
+    color: var(--ivory); letter-spacing: -0.01em;
+  }
+  .bio-card .bio-titleline { font-size: 14.5px; color: var(--accent); margin: 0 0 24px; line-height: 1.5; }
+  .bio-card .bio-text p { font-size: 16px; line-height: 1.68; color: var(--muted); margin: 0 0 16px; }
+  .bio-card .bio-text p:last-child { margin-bottom: 0; }
+  .bio-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--bg);
+    color: var(--ivory); cursor: pointer; font-size: 20px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color .3s, color .3s;
+  }
+  .bio-close:hover { border-color: var(--accent); color: var(--accent); }
+  @media (max-width: 720px) {
+    .bio-card { grid-template-columns: 1fr; }
+    .bio-card .bio-portrait { min-height: 240px; height: 240px; }
+  }
+
+  /* ---------- voices / testimonial ---------- */
+  .voices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(36px, 5vw, 72px);
+  }
+  .voice .who .nm.anon { color: var(--muted); font-style: italic; font-weight: 500; }
+  .voice .anon-mark {
+    width: 46px; height: 46px; flex: none;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 28px; line-height: 1;
+    color: var(--accent);
+  }
+  .voice {
+    border-top: 1px solid var(--line);
+    padding-top: 38px;
+  }
+  .voice blockquote {
+    margin: 0 0 32px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(20px, 1.9vw, 27px);
+    line-height: 1.42;
+    letter-spacing: -0.005em;
+    color: color-mix(in srgb, var(--ivory) 94%, var(--muted));
+    text-wrap: pretty;
+  }
+  .voice blockquote .mark { color: var(--accent); font-style: italic; }
+  .voice .attr { display: flex; align-items: center; gap: 16px; }
+  .voice-logo { width: 46px; height: 46px; flex: none; }
+  .voice .who { display: flex; flex-direction: column; gap: 3px; }
+  .voice .who .nm { font-size: 14.5px; font-weight: 600; color: var(--ivory); }
+  .voice .who .nm .ph { color: var(--faint); font-weight: 500; }
+  .voice .who .org { font-size: 13px; color: var(--muted); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 980px) {
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .voices { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    .services { grid-template-columns: 1fr; }
+    .service { border-right: none; padding: 38px 0 42px; }
+    .service:first-child { padding-top: 38px; }
+    .why { grid-template-columns: 1fr; gap: 50px; }
+    .audience { grid-template-columns: 1fr; }
+    .aud-card { border-right: none; padding: 36px 0 40px; }
+    .aud-card:first-child { padding-top: 36px; }
+    .pov-body { margin-left: 0; }
+    .pov-grid { grid-template-columns: 1fr; gap: 22px; }
+    .team-lead { grid-template-columns: 1fr; gap: 40px; }
+    .team-portrait { height: 360px; max-width: 360px; }
+    .ng-grid { grid-template-columns: 1fr; gap: 28px; }
+    .what-head { grid-template-columns: 1fr; gap: 26px; align-items: start; }
+    .flywheel { grid-template-columns: 1fr; }
+    .fw-stage { padding: 36px 0 38px; border-right: none; }
+    .fw-stage:first-child { padding-top: 36px; }
+    .fw-arrow { width: 100%; height: 56px; border-bottom: none; transform: rotate(90deg); }
+    .fw-loop { flex-direction: column; gap: 16px; }
+  }
+  @media (max-width: 560px) {
+    .hero-actions { gap: 20px; }
+    .btn { width: 100%; justify-content: center; }
+    .hero-foot { width: 100%; }
+    .aud-card { padding: 38px 28px 42px; }
+    .team-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- institutional sans presence + warm serif-italic accents ---------- */
+  h1.hero-title, .pov-title, .ng-title, .what-head h2, .fw-stage h3,
+  .aud-card h3, .why-copy h2, .cta h2, .team-intro, .team-name, .tm-name,
+  .service h3 { font-weight: var(--display-weight); }
+
+  .ng-title .pop, .what-head h2 .pop {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+</style>
+</head>
+<body data-grain="off">
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <rect width="100" height="100" fill="#f7f3ea"/>
+      <line x1="20" y1="36" x2="66" y2="50" stroke="#02bdbd" stroke-width="1.3" stroke-opacity="0.6"/>
+      <line x1="20" y1="50" x2="66" y2="50" stroke="#02bdbd" stroke-width="1.3" stroke-opacity="0.4"/>
+      <line x1="20" y1="64" x2="66" y2="50" stroke="#02bdbd" stroke-width="1.3" stroke-opacity="0.6"/>
+      <circle cx="66" cy="50" r="4.5" fill="#e8923a"/>
+      <text x="50" y="86" fill="#111416" font-family="Georgia, serif" font-size="11" font-style="italic" text-anchor="middle">Aus Asia Connect</text>
+    </svg>
+  </template>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Aus Asia Connect home">
+        <img class="logo logo-colour" src="assets/aac-logo-colour.png" alt="Aus Asia Connect" />
+        <img class="logo logo-white" src="assets/aac-logo-white.png" alt="Aus Asia Connect" />
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a class="link" href="#what">What we do</a>
+          <a class="link" href="#who">Who it's for</a>
+          <a class="link" href="#why">Why us</a>
+          <a class="link" href="#team">About</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch light or dark theme">
+          <svg class="ic ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/></svg>
+          <svg class="ic ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.3" y1="5.3" x2="7" y2="7"/><line x1="17" y1="17" x2="18.7" y2="18.7"/><line x1="5.3" y1="18.7" x2="7" y2="17"/><line x1="17" y1="7" x2="18.7" y2="5.3"/></g></svg>
+        </button>
+        <button class="burger" id="burger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#what"><span class="num">01</span>What we do</a>
+    <a href="#who"><span class="num">02</span>Who it's for</a>
+    <a href="#why"><span class="num">03</span>Why us</a>
+    <a href="#team"><span class="num">04</span>About</a>
+    <a href="#contact"><span class="num">05</span>Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <svg class="corridor" id="corridor" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="wrap hero-grid">
+      <div class="hero-kicker reveal">
+        <span class="label">Australia&ndash;Asia corridor</span>
+        <span class="sep"></span>
+        <span class="label">Venture partner</span>
+      </div>
+      <h1 class="hero-title display reveal" data-d="1">
+        A <span class="pop ital">different way</span> into the Australia&ndash;Asia corridor.
+      </h1>
+      <p class="hero-sub reveal" data-d="2">
+        Aus Asia Connect works from inside companies and educational programs moving across
+        Australia and Asia &mdash; reading the market, adapting the strategy, and moving with
+        conviction. Not advice from the outside. A partner who has lived both sides.
+      </p>
+      <div class="hero-actions reveal" data-d="3">
+        <a class="btn btn-primary" href="#contact">Let&rsquo;s have a conversation <span class="arrow">&rarr;</span></a>
+        <span class="hero-foot"><span class="tick"></span>Built for the long game.</span>
+      </div>
+    </div>
+    <div class="scroll-hint reveal" data-d="3"><span class="line"></span>Scroll</div>
+  </section>
+
+  <!-- POINT OF VIEW -->
+  <section class="pov section-pad" id="pov">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">&mdash;</span><span>Point of view</span><span class="rule"></span></div>
+      <div class="pov-grid">
+        <h2 class="pov-title display reveal" data-d="1">Success does not travel automatically.</h2>
+        <div class="pov-body">
+        <p class="reveal" data-d="1">
+          What works in one market can fail in another. People think differently. Trust is
+          built differently. Decisions move through different systems, signals, and relationships.
+        </p>
+        <p class="reveal" data-d="2">
+          Aus Asia Connect helps companies understand what transfers, what adapts, and what
+          needs to be rebuilt for a new market reality.
+        </p>
+        <div class="transfers reveal" data-d="3">
+          <span class="chip">what transfers</span>
+          <span class="chip">what adapts</span>
+          <span class="chip">what must be rebuilt</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE YOU LAND / NO FOOTHOLD -->
+  <section class="section-pad noground" id="before">
+    <div class="wrap">
+      <div class="ng-grid">
+        <div class="ng-left">
+          <div class="section-mark reveal"><span class="idx">&mdash;</span><span>Before you land</span><span class="rule"></span></div>
+          <h2 class="ng-title display reveal" data-d="1">You don&rsquo;t need a foothold to <span class="pop">start</span>.</h2>
+        </div>
+        <div class="ng-right">
+          <p class="ng-lead reveal" data-d="1">
+            Most help arrives after you&rsquo;ve already committed &mdash; office signed, hires made,
+            capital spent. We start earlier, when the only thing on the line is your thinking.
+          </p>
+          <p class="ng-body reveal" data-d="2">
+            For companies with no presence in the market yet, we help you think it through, pressure-test
+            it against how the market actually works, and move &mdash; without paying the full price of
+            getting it wrong on the ground first.
+          </p>
+          <div class="ng-stages reveal" data-d="3">
+            <span class="ng-stage"><span class="ng-dot"></span>Think it through</span>
+            <span class="ng-stage"><span class="ng-dot"></span>Validate it in-market</span>
+            <span class="ng-stage"><span class="ng-dot"></span>Move with conviction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section-pad" id="what">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">01</span><span>What we do</span><span class="rule"></span></div>
+      <div class="what-head">
+        <h2 class="reveal" data-d="1">A flywheel, <span class="pop">not a menu</span>.</h2>
+        <p class="what-lead reveal" data-d="1">
+          We don&rsquo;t advise from the outside and walk away. We build a system that feeds itself
+          &mdash; <strong>and we work from inside it</strong>, because we&rsquo;ve lived both sides of the
+          corridor ourselves. Each part makes the next one stronger.
+        </p>
+      </div>
+
+      <ol class="flywheel">
+        <li class="fw-stage reveal" data-d="1">
+          <span class="fw-num">01 <span class="stage-tag">Curriculum</span></span>
+          <h3>We build the talent</h3>
+          <p>Cross-border curriculum that grows people who genuinely understand how both markets think, decide, and build trust.</p>
+        </li>
+        <li class="fw-arrow reveal" data-d="1" aria-hidden="true">
+          <svg viewBox="0 0 34 34" fill="none"><path d="M4 17h22" stroke="currentColor" stroke-width="1.5"/><path d="M22 11l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="fw-stage reveal" data-d="2">
+          <span class="fw-num">02 <span class="stage-tag">Immersion</span></span>
+          <h3>We put it on the corridor</h3>
+          <p>That talent moves into immersive, in-market programs and embedded venture work &mdash; operating across both sides in practice, not theory.</p>
+        </li>
+        <li class="fw-arrow reveal" data-d="2" aria-hidden="true">
+          <svg viewBox="0 0 34 34" fill="none"><path d="M4 17h22" stroke="currentColor" stroke-width="1.5"/><path d="M22 11l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="fw-stage reveal" data-d="3">
+          <span class="fw-num">03 <span class="stage-tag">Community</span></span>
+          <h3>They keep finding each other</h3>
+          <p>Everyone graduates into an ongoing community where expanding companies and corridor-fluent talent keep meeting &mdash; the next hire, partner, and open door.</p>
+        </li>
+      </ol>
+
+      <div class="fw-loop reveal" data-d="1">
+        <svg class="loop-mark" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+          <path d="M37 23a14 14 0 1 1-4.1-9.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M33 6.5l.9 7.6-7.6.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>
+          And the loop turns. Companies expanding across markets need people who understand both
+          sides &mdash; and the talent we build is already on the corridor, inside the community,
+          ready to meet them. Every turn makes the next one easier. <strong>AAC compounds over time.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section-pad" id="who" style="background: var(--bg);">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">02</span><span>Who it&rsquo;s for</span><span class="rule"></span></div>
+      <h2 class="display reveal" data-d="1" style="font-size: clamp(30px,4.4vw,56px); max-width: 20ch; margin: 0 0 56px;">Built for people moving across the corridor.</h2>
+      <div class="audience">
+        <div class="aud-card reveal" data-d="1">
+          <div class="a-glyph"><span class="bar"></span>ICP 01 &middot; Expanding</div>
+          <h3>Companies moving across the corridor</h3>
+          <p>Founders and leadership teams expanding from Australia into Asia, or Asia into Australia &mdash; pre-decision or early-decision. They need validation, a real market read, and the first relationships that matter before committing capital or headcount.</p>
+        </div>
+        <div class="aud-card reveal" data-d="2">
+          <div class="a-glyph"><span class="bar"></span>ICP 02 &middot; Committed</div>
+          <h3>On the ground, not yet in the room</h3>
+          <p>Companies that have committed &mdash; a local office and a mandate &mdash; but lack the seniority, network, or standing to reach the rooms that actually matter. Proving commitment without yet having the access to convert it.</p>
+        </div>
+        <div class="aud-card reveal" data-d="3">
+          <div class="a-glyph"><span class="bar"></span>ICP 03 &middot; Educational</div>
+          <h3>Institutions and educational programs</h3>
+          <p>Universities, educational institutions, and programs developing people who can operate across cultures, industries, and markets &mdash; a longer horizon built on curriculum, program design, and talent exchange.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section-pad" id="why">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">03</span><span>Why us</span><span class="rule"></span></div>
+      <div class="why">
+        <div class="why-figure reveal" data-d="1">
+          <div class="big">17<sup>yrs</sup></div>
+          <div class="cap">Across market expansion &amp; education &mdash; from global banking to MAS-accredited fintech programs</div>
+        </div>
+        <div class="why-copy">
+          <h2 class="reveal" data-d="1">We&rsquo;ve lived both sides. So we partner from the inside.</h2>
+          <p class="reveal" data-d="2">
+            Aus Asia Connect is built from decades of lived and commercial experience across
+            Singapore and Australia &mdash; understanding how business is actually done, how trust
+            is formed, and how decisions move through different systems and relationships.
+          </p>
+          <p class="reveal" data-d="3">
+            The founding team brings real reach on both sides &mdash; including 17 years inside
+            Singapore&rsquo;s education system and MAS-accredited fintech programs, alongside ties to the
+            World Bank, UNESCO, and central banks across the region. That is why we work embedded,
+            not at arm&rsquo;s length: we&rsquo;ve been on the ground in both markets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / TEAM -->
+  <section class="section-pad" id="team" style="background: var(--bg-2);">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">04</span><span>About</span><span class="rule"></span></div>
+      <h2 class="team-intro reveal" data-d="1">Founders and operators who&rsquo;ve lived both sides.</h2>
+      <p class="team-sub reveal" data-d="1">
+        Aus Asia Connect is built by people who have done the work on both sides of the corridor &mdash;
+        in business, finance, and education. Not consultants parachuting in. Partners who&rsquo;ve been on
+        the ground in both markets, and stay close to every company and program we take on.
+      </p>
+
+      <div class="team-lead">
+        <image-slot id="founder" class="team-portrait reveal" data-d="1" shape="rounded" radius="3" placeholder="Li Si Wong"></image-slot>
+        <div>
+          <div class="team-role reveal" data-d="1"><span class="bar"></span>Founder</div>
+          <h3 class="team-name reveal" data-d="2">Li Si Wong</h3>
+          <p class="team-titleline reveal" data-d="2">Founder, Aus Asia Connect</p>
+          <p class="team-bio reveal" data-d="2">
+            Builds the corridor the way she has always worked it &mdash; reading the situation deeply,
+            understanding the human context, and moving with rigour, relationships, and clarity. The
+            instinct Aus Asia Connect runs on: find the side door when the main one is closed, on both
+            sides of the Australia&ndash;Asia corridor.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-lead">
+        <image-slot id="cofounder" class="team-portrait reveal" data-d="1" shape="rounded" radius="3" placeholder="Dr Lillian Koh"></image-slot>
+        <div>
+          <div class="team-role reveal" data-d="1"><span class="bar"></span>Co-founder</div>
+          <h3 class="team-name reveal" data-d="2">Dr Lillian Koh</h3>
+          <p class="team-titleline reveal" data-d="2">Founder &amp; CEO, Fintech Academy Singapore &middot; International Consultant, World Bank &amp; UNESCO</p>
+          <p class="team-bio reveal" data-d="2">
+            One of Singapore&rsquo;s most respected voices in fintech, AI, and financial education &mdash;
+            three decades across government, academia, and entrepreneurship, with a PhD from Curtin
+            University and longstanding ties to Australia.
+          </p>
+          <ul class="cred-list reveal" data-d="3">
+            <li>Founder of <b>Fintech Academy Singapore</b> and co-author of <span class="ital">Singapore: The Fintech Nation</span> (McGraw Hill Asia).</li>
+            <li>Delivers <b>MAS-accredited programs</b> with NTU and NUS; collaborates with central banks across ASEAN and the Middle East.</li>
+            <li>Advisor to the <b>Singapore AI Association</b> and Senior Advisor to the <b>Institute of Blockchain Singapore</b>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <button type="button" class="team-member reveal" data-d="1" data-bio="daryl">
+          <image-slot id="team-daryl" class="tm-photo" shape="rounded" radius="3" placeholder="Daryl Teo"></image-slot>
+          <h4 class="tm-name">Daryl Teo</h4>
+          <p class="tm-line">Advisor &middot; AI &amp; technology</p>
+          <span class="tm-more"><span class="pl">+</span> Read bio</span>
+        </button>
+        <button type="button" class="team-member reveal" data-d="2" data-bio="chloe">
+          <image-slot id="team-chloe" class="tm-photo" shape="rounded" radius="3" placeholder="Chloe Bloem"></image-slot>
+          <h4 class="tm-name">Chloe Bloem</h4>
+          <p class="tm-line">Team</p>
+          <span class="tm-more soon">Bio coming soon</span>
+        </button>
+        <button type="button" class="team-member reveal" data-d="3" data-bio="farah">
+          <image-slot id="team-farah" class="tm-photo" shape="rounded" radius="3" placeholder="Farah Wong"></image-slot>
+          <h4 class="tm-name">Farah Wong</h4>
+          <p class="tm-line">Advisor &middot; strategy &amp; GTM</p>
+          <span class="tm-more"><span class="pl">+</span> Read bio</span>
+        </button>
+        <button type="button" class="team-member reveal" data-d="3" data-bio="matthias">
+          <image-slot id="team-matthias" class="tm-photo" shape="rounded" radius="3" placeholder="Matthias Lissner"></image-slot>
+          <h4 class="tm-name">Matthias Lissner</h4>
+          <p class="tm-line">Advisor &middot; international expansion</p>
+          <span class="tm-more"><span class="pl">+</span> Read bio</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBER BIO OVERLAY -->
+  <div class="bio-overlay" id="bioOverlay" role="dialog" aria-modal="true" aria-labelledby="bioName">
+    <div class="bio-card">
+      <image-slot id="bio-portrait" class="bio-portrait" shape="rect" placeholder="Photo"></image-slot>
+      <div class="bio-body">
+        <button class="bio-close" id="bioClose" aria-label="Close">&times;</button>
+        <div class="bio-role"><span class="bar"></span><span id="bioRole">Advisor</span></div>
+        <h3 id="bioName">Daryl Teo</h3>
+        <p class="bio-titleline" id="bioTitle"></p>
+        <div class="bio-text" id="bioText"></div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </section>
+
+  <!-- VOICES / TESTIMONIAL -->
+  <section class="section-pad" id="voices">
+    <div class="wrap">
+      <div class="section-mark reveal"><span class="idx">&mdash;</span><span>In their words</span><span class="rule"></span></div>
+      <div class="voices">
+        <figure class="voice reveal" data-d="1">
+          <blockquote>
+            &ldquo;Entering new markets is daunting, no matter how seasoned you are. Li Si helped us
+            carve out our core ICP in Australia and find the right positioning &mdash; while
+            <span class="mark">staying true to our brand.</span> Her suggestions are actionable and
+            grounded in deep reasoning. You&rsquo;ll see the value within 5 minutes of talking to her.&rdquo;
+          </blockquote>
+          <figcaption class="attr">
+            <span class="who">
+              <span class="nm">Amzeen Ansar</span>
+              <span class="org">Head of Marketing &middot; Perx</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="voice reveal" data-d="2">
+          <blockquote>
+            &ldquo;Aus Asia Connect provides an <span class="mark">insightful bridge between two cultures</span>
+            &mdash; Singapore and Australia. With genuine business acumen and experience, they build
+            understanding and identify opportunities for companies from either nation.&rdquo;
+          </blockquote>
+          <figcaption class="attr">
+            <image-slot id="voice-logo-haymarket" class="voice-logo" shape="circle" placeholder="Logo"></image-slot>
+            <span class="who">
+              <span class="nm">Andrea Plawutsky</span>
+              <span class="org">Senior Program Manager &middot; Haymarket HQ &mdash; GIA Singapore&ndash;Australia Market Accelerator (SAMA), Enterprise Singapore</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta section-pad" id="contact">
+    <div class="wrap">
+      <div class="cta-inner">
+        <h2 class="reveal">The right conversation can change the path.</h2>
+      </div>
+      <p class="reveal" data-d="1">
+        If you are exploring expansion, partnership, or cross-border talent development across
+        Australia and Asia, let&rsquo;s start with a conversation.
+      </p>
+      <div class="cta-row reveal" data-d="2">
+        <a class="btn btn-primary" href="mailto:lisi@ausasiaconnect.com">Let&rsquo;s have a conversation <span class="arrow">&rarr;</span></a>
+        <span class="cta-email">
+          <span class="lbl">Direct</span>
+          <a href="mailto:lisi@ausasiaconnect.com">lisi@ausasiaconnect.com</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="wrap foot-grid">
+      <a class="brand" href="#top"><img class="logo logo-colour" src="assets/aac-logo-colour.png" alt="Aus Asia Connect" /><img class="logo logo-white" src="assets/aac-logo-white.png" alt="Aus Asia Connect" /></a>
+      <div class="foot-links">
+        <a href="#what">What we do</a>
+        <a href="#who">Who it's for</a>
+        <a href="#why">Why us</a>
+        <a href="#team">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-meta">Australia&ndash;Asia corridor &middot; &copy; 2026</div>
+    </div>
+  </footer>
+
+  <div id="tweaks-root"></div>
+
+  <script src="image-slot.js"></script>
+
+  <script>
+    // enable JS-gated entrance animations (content stays visible if JS never runs)
+    document.documentElement.classList.add('anim');
+
+    // ---- nav scroll state ----
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---- mobile menu ----
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobileMenu');
+    const toggleMenu = (force) => {
+      const open = force ?? !menu.classList.contains('open');
+      menu.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', () => toggleMenu());
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+    // ---- theme toggle (light / dark tone) ----
+    const themeToggle = document.getElementById('themeToggle');
+    const applyTheme = (th) => {
+      document.documentElement.setAttribute('data-theme', th);
+      try { localStorage.setItem('aac-theme', th); } catch (e) {}
+      if (window.__rebuildCorridor) window.__rebuildCorridor();
+    };
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // ---- reveal on scroll ----
+    const reveals = document.querySelectorAll('.reveal');
+    // Immediately reveal anything already within (or near) the first viewport so the
+    // hero is never blank if the observer callback is delayed by the renderer.
+    const revealInView = () => {
+      const vh = window.innerHeight;
+      reveals.forEach(el => {
+        if (el.classList.contains('in')) return;
+        if (el.getBoundingClientRect().top < vh * 0.92) el.classList.add('in');
+      });
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('in'));
+    }
+    requestAnimationFrame(revealInView);
+    window.addEventListener('load', revealInView);
+
+    // ---- member bio overlay ----
+    const BIOS = {
+      daryl: {
+        role: 'Advisor',
+        name: 'Daryl Teo',
+        title: 'Head of AI & Innovation, Nash Advisory · CTO & technologist',
+        body: [
+          'A CTO and technologist who advises companies on adopting technology that actually moves the business \u2014 not technology for its own sake. Daryl has built and led engineering and product teams across finance, retail, and AgTech, with names like Grill\u2019d, MyDeal, and HESTA.',
+          'He now leads AI & Innovation at Nash Advisory, helping companies unlock real value through artificial intelligence \u2014 from strategy through to what actually ships.',
+          'For the corridor, he brings the build-side perspective: how technology, product, and operations come together when a company expands into a new market.'
+        ]
+      },
+      farah: {
+        role: 'Advisor',
+        name: 'Farah Wong',
+        title: 'Strategy advisor \u2014 go-to-market for institutional & government markets',
+        body: [
+          'Farah is a strategy advisor focused on go-to-market strategies for institutional and government markets. She brings particular fluency in working with international and multilateral organisations, and has advised listed companies on their growth and market strategy.',
+          'Her advisory approach is informed by the science of decision-making, studied at the University of Cambridge. She holds certifications from the United Nations Institute for Training and Research (UNITAR) and the Deutsche Gesellschaft f\u00fcr Internationale Zusammenarbeit (GIZ), and is pursuing an MSc in artificial intelligence.'
+        ]
+      },
+      matthias: {
+        role: 'Advisor',
+        name: 'Matthias Lissner',
+        title: 'International expansion & GTM \u00b7 20 years across PE and tech',
+        body: [
+          'Twenty years across real estate private equity and tech \u2014 fintech, proptech, and SaaS. Matthias has co-founded and scaled several tech ventures in Germany, the UK, and Finland, focused on B2B enterprise sales and operations.',
+          'He brings a genuinely global mindset \u2014 four countries, always in multinational teams \u2014 with a focus on international expansion and go-to-market strategy. Based in Malaysia.'
+        ]
+      }
+    };
+
+    const overlay = document.getElementById('bioOverlay');
+    const bioName = document.getElementById('bioName');
+    const bioRole = document.getElementById('bioRole');
+    const bioTitle = document.getElementById('bioTitle');
+    const bioText = document.getElementById('bioText');
+    const bioClose = document.getElementById('bioClose');
+    const bioPortrait = document.getElementById('bio-portrait');
+    let lastFocus = null;
+
+    const openBio = (key, sourceCard) => {
+      const b = BIOS[key];
+      if (!b) return; // no bio yet (coming soon)
+      lastFocus = sourceCard || null;
+      bioRole.textContent = b.role;
+      bioName.textContent = b.name;
+      bioTitle.textContent = b.title;
+      bioText.innerHTML = b.body.map(p => '<p>' + p + '</p>').join('');
+      // mirror the card's filled photo into the overlay if present
+      try {
+        const srcSlot = sourceCard && sourceCard.querySelector('image-slot');
+        if (srcSlot && bioPortrait) {
+          const img = srcSlot.getAttribute('image') || srcSlot.getAttribute('src');
+          if (img) bioPortrait.setAttribute('image', img);
+        }
+      } catch (e) {}
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      bioClose.focus();
+    };
+    const closeBio = () => {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    };
+
+    document.querySelectorAll('button.team-member').forEach(card => {
+      card.addEventListener('click', () => openBio(card.getAttribute('data-bio'), card));
+    });
+    bioClose.addEventListener('click', closeBio);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeBio(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeBio(); });
+
+    // ---- corridor motif (thin lines + traveling signals) ----
+    function buildCorridor() {
+      const svg = document.getElementById('corridor');
+      if (!svg) return;
+      const w = svg.clientWidth, h = svg.clientHeight;
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-bright').trim() || '#02bdbd';
+      const pop = getComputedStyle(document.documentElement).getPropertyValue('--pop').trim() || '#e8923a';
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // gentle converging corridor lines on the right half
+      const lines = 7;
+      let html = '';
+      const cx = w * 0.78, cy = h * 0.46;
+      for (let i = 0; i < lines; i++) {
+        const t = i / (lines - 1);
+        const y0 = h * (0.12 + t * 0.74);
+        const op = (0.10 + (1 - Math.abs(t - 0.5) * 2) * 0.13).toFixed(3);
+        html += `<path d="M ${-40} ${y0} Q ${w*0.45} ${y0 + (cy - y0)*0.25} ${cx} ${cy}" fill="none" stroke="${accent}" stroke-opacity="${op}" stroke-width="1"/>`;
+      }
+      // node
+      html += `<circle cx="${cx}" cy="${cy}" r="3.4" fill="${pop}" fill-opacity="0.9"/>`;
+      html += `<circle cx="${cx}" cy="${cy}" r="14" fill="none" stroke="${pop}" stroke-opacity="0.28"/>`;
+      html += `<circle cx="${cx}" cy="${cy}" r="26" fill="none" stroke="${pop}" stroke-opacity="0.12"/>`;
+      // traveling signals
+      if (!reduce) {
+        for (let i = 0; i < lines; i += 3) {
+          const t = i / (lines - 1);
+          const y0 = h * (0.12 + t * 0.74);
+          const dur = (9 + i * 1.6).toFixed(1);
+          const delay = (i * 1.4).toFixed(1);
+          html += `<circle r="2.4" fill="${pop}" fill-opacity="0.6" class="signal">
+            <animateMotion dur="${dur}s" begin="${delay}s" repeatCount="indefinite"
+              path="M ${-40} ${y0} Q ${w*0.45} ${y0 + (cy - y0)*0.25} ${cx} ${cy}" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+            <animate attributeName="fill-opacity" values="0;0.6;0" dur="${dur}s" begin="${delay}s" repeatCount="indefinite"/>
+          </circle>`;
+        }
+      }
+      svg.innerHTML = html;
+    }
+    buildCorridor();
+    let rT;
+    window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(buildCorridor, 200); });
+    window.__rebuildCorridor = buildCorridor;
+  </script>
+
+  <!-- Tweaks -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "pop": "#e8923a",
+      "headlineFace": "Serif",
+      "closing": "Deep petrol",
+      "grain": true
+    }/*EDITMODE-END*/;
+
+    const POP_INK = {
+      "#e8923a": "#211608",   // amber
+      "#02bdbd": "#03201d"    // bright teal
+    };
+
+    const CLOSING = {
+      "Deep petrol": "#0c3640",
+      "Petrol night": "#082227"
+    };
+
+    function TweaksApp() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+      React.useEffect(() => {
+        const root = document.documentElement;
+        root.style.setProperty('--pop', t.pop);
+        root.style.setProperty('--pop-ink', POP_INK[t.pop] || '#211608');
+        root.style.setProperty('--cta-bg', CLOSING[t.closing] || '#0c3640');
+        root.style.setProperty('--display', t.headlineFace === 'Serif' ? 'var(--serif)' : 'var(--display-sans)');
+        document.body.setAttribute('data-grain', t.grain ? 'on' : 'off');
+        if (window.__rebuildCorridor) window.__rebuildCorridor();
+      }, [t.pop, t.headlineFace, t.closing, t.grain]);
+
+      return (
+        <TweaksPanel title="Tweaks">
+          <TweakSection label="The spark" />
+          <TweakColor label="Accent" value={t.pop}
+            options={["#e8923a", "#02bdbd"]}
+            onChange={(v) => setTweak('pop', v)} />
+          <TweakSection label="Closing banner" />
+          <TweakRadio label="Surface" value={t.closing}
+            options={["Deep petrol", "Petrol night"]}
+            onChange={(v) => setTweak('closing', v)} />
+          <TweakSection label="Typography" />
+          <TweakRadio label="Headline face" value={t.headlineFace}
+            options={["Serif", "Sans"]}
+            onChange={(v) => setTweak('headlineFace', v)} />
+          <TweakSection label="Texture" />
+          <TweakToggle label="Film grain" value={t.grain}
+            onChange={(v) => setTweak('grain', v)} />
+        </TweaksPanel>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+  </script>
+</body>
+</html>

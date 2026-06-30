@@ -5,27 +5,23 @@ programs expanding across the Australia–Asia corridor.
 
 ## What this is
 
-A single-page static site. No build step, no backend.
-
-- `index.html` — the entire site
-- `assets/` — logo files (colour + white)
-- `image-slot.js` — drag-and-drop image placeholders
-- `tweaks-panel.jsx` — design-time controls (hidden for visitors)
+A single, self-contained `index.html`. Everything — fonts, scripts, logos, and
+team photos — is embedded in that one file. No build step, no backend, no other
+assets required.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
+Just open `index.html` in a browser, or serve the folder:
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+python3 -m http.server 8000   # then visit http://localhost:8000
 ```
 
 ## Deploy
 
-Any static host works. No build command; output/root directory is `/`.
+Any static host works. No build command needed.
 
-- **Cloudflare Pages** — Connect to Git → Framework preset: None → Build command: (blank) → Output: `/`
-- **Netlify / Vercel** — Import the repo → no build settings needed → Deploy
+- **Cloudflare Pages / Vercel / Netlify** — connect this repo, framework preset
+  **None**, build command blank, output directory `/`. Deploy.
 
 Every push to `main` redeploys automatically.
